@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Xinchang Zhang 张新畅</title>
-<link rel="icon" href="233.png" type="image/png">
+<link rel="icon" href="../233.png" type="image/png">
 <style>
     @font-face {
     font-family: 'myfont';
-    src: url('font/myfont-Regular.woff2') format('woff2');
+    src: url('../font/myfont-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     }
 
     @font-face {
     font-family: 'myfont';
-    src: url('font/myfont-Bold.woff2') format('woff2');
+    src: url('../font/myfont-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     }
     @font-face {
     font-family: 'myfont';
-    src: url('font/myfont-It.woff2') format('woff2');
+    src: url('../font/myfont-It.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
     }
@@ -32,7 +32,7 @@
         font-family: myfont, sans-serif; /* Set the font to Arial */
     }
     .hero {
-        background-image: url('home/background_home.png');
+        background-image: url('../home/background_home.png');
         height: 25%;
         background-position: center;
         background-repeat: no-repeat;
@@ -259,12 +259,12 @@
 <script>
 
 window.onload = function() {
-    route();  // 初始化页面内容
+    // Ensure the publications content is shown when the page loads
+    showContent('publications');  
+    updateActiveLink('publications');
 };
 
-window.onhashchange = function() {
-    route();  // 当URL哈希改变时，重新路由以更新内容
-};
+
 
 
 
@@ -292,11 +292,11 @@ function showContent(page) {
 
     // 控制背景图和标题显示
     if (page === 'home') {
-        changeBackground('home/background_home.png');
+        changeBackground('../home/background_home.png');
         document.querySelector('.hero p').style.display = 'block';
         document.querySelector('.hero h1').style.display = 'block';
     } else {
-        changeBackground(page + '/background_' + page + '.jpg');
+        changeBackground('../'+ page + '/background_' + page + '.jpg');
         document.querySelector('.hero p').style.display = 'none';
         document.querySelector('.hero h1').style.display = 'none';
     }
@@ -368,7 +368,7 @@ function hideTooltip() {
 </head>
 <body>
 <div class="hero">
-    <img src="home/profilephoto.jpg" alt="Profile Photo" class="profile-pic" onmouseover="showTooltip(event)" onmouseout="hideTooltip()">
+    <img src="../home/profilephoto.jpg" alt="Profile Photo" class="profile-pic" onmouseover="showTooltip(event)" onmouseout="hideTooltip()">
     <p>Welcome to visit the homepage of</p>
     <h1>XINCHANG ZHANG</h1>
 </div>
@@ -384,32 +384,17 @@ function hideTooltip() {
 
          <!--增加新页面：参考这里的test格式，并修改对应所有的test字样-->
 <nav>
-    <a href="./index.html" id="home-link">Home</a>
-    <a href="#publications" id="publications-link">Publications</a>
-    <a href="#travels" id="travels-link">Travels</a>
-    <a href="#others" id="others-link">Others</a>
-    <a href="#news" id="news-link">News</a>
+    <a href="../index.html" id="home-link">Home</a>
+    <a href="../publications/publications.html" id="publications-link">Publications</a>
+    <a href="../travels/travels.html" id="travels-link">Travels</a>
+    <a href="../others/others.html" id="others-link">Others</a>
+    <a href="../news/news.html" id="news-link">News</a>
 
     <!-- <a href="#test" id="test-link">Test</a> -->
 
 </nav>
 
 
-<!--Home Page Text   Home Page Text   Home Page Text   Home Page Text--> 
-<!--Home Page Text   Home Page Text   Home Page Text   Home Page Text--> 
-<!--Home Page Text   Home Page Text   Home Page Text   Home Page Text--> 
-
-<div id="home-content" class="content">
-    <p>I am currently a Ph.D. student at the <a href="https://www.bu.edu/eng/academics/departments-and-divisions/electrical-and-computer-engineering/" target="_blank">department of electrical and computer engineering</a>, <a href="https://www.bu.edu/" target="_blank">Boston University</a>, working with professor <a href="https://www.bu.edu/eng/profile/milos-popovic/" target="_blank">Miloš A. Popović</a>. My research focuses on the theory, design, and experimental demonstration of integrated electro-photonic systems for RF communications.</p>
-    <p>I proudly enjoy multiple personal hobbies, such as Marathon, the piano, <a href="https://en.wikipedia.org/wiki/Go_(game)" target="_blank">GO (or Paduk)</a>, hand writing, and pen collections. Besides these, I am an aviation enthusiast who learn story and history of cumercial airliners, airplanes, and aircrash investigations. Please refer to "Others" menu for details.</p>
-    <hr>
-    <h1>Educations</h1>
-    <p>2021-     <strong><a href="http://bu.edu/" target="_blank">Boston University</strong></a> | Ph.D. Candidate in Electrical Engineering</p>
-    <p>2017-2021 <strong><a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</strong></a> | B.S. in Physics</p>
-    <h1>Experience</h1>
-    <p>2024 May-Aug <strong><a href="https://ayarlabs.com/" target="_blank">Ayar Labs</strong></a> | Internship: Silicon photonics design</p>
-    <p>2021 Feb-Jun <strong><a href="https://vivolight.com/" target="_blank">vivoLight</strong></a>| Internship: Optical coherence tomography probe design</p>
-</div> 
 
 <!--Publication Page Text   Publication Page Text   Publication Page Text   Publication Page Text--> 
 <!--Publication Page Text   Publication Page Text   Publication Page Text   Publication Page Text--> 
@@ -427,7 +412,7 @@ function hideTooltip() {
             <p><a href="https://preprints.opticaopen.org/articles/preprint/Efficient_wideband_tunable_RF-optical_signal_conversion_via_triply-resonant_active-passive_photonic_molecules/25655976" target="_blank">Preprint <strong>XX</strong>(x) xxxx-xxxx, 2024</a></p>
             <p>Manuj Singh, <strong>Xinchang Zhang</strong>, ..., Vladimir M. Stojanović, Miloš A. Popović</p>
         </div>
-        <img src="publications/TripleCover.jpg" alt="描述性文本" class="right-aligned-image">
+        <img src="../publications/TripleCover.jpg" alt="描述性文本" class="right-aligned-image">
     </div>
     
     <!--A new paper-->
@@ -438,7 +423,7 @@ function hideTooltip() {
             <p><a href="https://doi.org/10.1364/OL.525476" target="_blank">Optics Letters <strong>49</strong>(13) Early-Posting, 2024</a></p>
             <p><strong>Xinchang Zhang</strong>, Manuj Singh, Dining Li, Miloš A. Popović</p>
         </div>
-        <img src="publications/FilterCover.jpg" alt="描述性文本" class="right-aligned-image">
+        <img src="../publications/FilterCover.jpg" alt="描述性文本" class="right-aligned-image">
     </div>
 
 
@@ -456,62 +441,6 @@ function hideTooltip() {
     <p><strong>X. Zhang</strong>, M. Popović</p>
     <!-- Additional sections and titles can be added here -->
 </div>
-
-
-
-
-<!--Travel Page Text   Travel Page Text   Travel Page Text   Travel Page Text--> 
-<!--Travel Page Text   Travel Page Text   Travel Page Text   Travel Page Text--> 
-<!--Travel Page Text   Travel Page Text   Travel Page Text   Travel Page Text--> 
-
-<div id="travels-content" class="content">
-    <h1>My Travel Adventures</h1>
-    <p>Read about my travels around the world.</p>
-    <!-- Additional sections and titles can be added here -->
-</div>
-
-<!--Other Page Text   Other Page Text   Other Page Text   Other Page Text-->
-<!--Other Page Text   Other Page Text   Other Page Text   Other Page Text--> 
-<!--Other Page Text   Other Page Text   Other Page Text   Other Page Text--> 
-
-<div id="others-content" class="content">
-    <h1>Other Activities</h1>
-    <p>Learn more about my other hobbies and interests.</p>
-    <!-- Additional sections and titles can be added here -->
-</div>
-
-
-<!--Test Page Text   Test Page Text   Test Page Text   Test Page Text-->
-<!--Test Page Text   Test Page Text   Test Page Text   Test Page Text--> 
-<!--Test Page Text   Test Page Text   Test Page Text   Test Page Text--> 
-
-<div id="news-content" class="content">
-    <h1>No News from Silicon Photonics Lab.</h1>
-    <p>I mean seriously no news.</p>
-
-    <hr class="secondary-hr">
-
-    <h1>One negligible impact to mankind, one giant leap for me.</h1>
-    <p class="publication-info">Released on 28 May 2024, in San Jose, California, USA.</p>
-    <p class="news-body"><span class="large-initial">T</span>he first journal manuscript of mine has been accepted by Optics Letters on 28 May, 2024. This is a training work in my Ph.D. and its acceptance represents my acquisition of the ability to conduct a closed-story research and manage scientific communications via peer review correspondence and publications. </p>
-
-    <hr class="secondary-hr">
-
-    <h1>Embarking on a new journey: my first job at Ayar Labs marks a promising alliance.</h1>
-    <p class="publication-info">Released on 21 May 2024, in San Jose, California, USA.</p>
-    <p class="news-body"><span class="large-initial">I</span> have commenced my first full-time role as an intern at Ayar Labs, under the guidance of Dr. John Fini. In this role, I am part of the Optical Design Team, where we are focusing on advancing system-level electro-photonic chips for DWDM transceiver systems. This position leverages and expands upon my previous research into practical, advanced industry applications of optical interconnect technologies.</p>
-
-
-</div>
-
-
-
-
-<!-- <div id="test-content" class="content">
-    <h1>Test Page</h1>
-    <p>This is a page for test.</p>
-</div> -->
-
 
 </body>
 </html>
