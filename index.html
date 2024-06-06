@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Xinchang Zhang 张新畅</title>
+<link rel="icon" href="233.png" type="image/png">
+<style>
+    @font-face {
+    font-family: 'myfont';
+    src: url('font/myfont-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'myfont';
+    src: url('font/myfont-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'myfont';
+    src: url('font/myfont-It.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    }
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: myfont, sans-serif; /* Set the font to Arial */
+    }
+    .hero {
+        background-image: url('home/background_home.png');
+        height: 25%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2em;
+        text-align: center;
+    }
+    .hero p {
+        margin: 0;
+        padding: 0 0 10px 0; /* Adjust padding to reduce line space */
+    }
+    .hero h1 {
+        margin: 0;
+        padding: 0;
+    }
+   
+    .profile-pic {
+        position: absolute;
+        top: 100%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        border: 2px solid #ccc; /* 添加淡灰色边框 */
+        box-shadow: 0 0 8px #ccc; /* 添加淡灰色外发光效果 */
+    }
+    .hidden-text {
+        display: none;
+    }
+    
+    
+    
+    
+    
+        /* 网址导航 */
+        nav {
+            background: #f8f8f8;
+            padding: 0px 10px;
+            text-align: center;
+            white-space: nowrap; /* Prevents wrapping of nav items by default */
+        }
+        nav a {
+        position: relative;
+        text-decoration: none;
+        margin: 6px 30px; /*上下，左右*/
+        padding: 4px 15px; /*文本与边框，内部概念*/
+        color: black;
+        font-size: 1.2em;
+        border-radius: 4px;
+        overflow: hidden; /* Ensures the pseudo-element doesn't extend outside the link */
+        display: inline-block; /* Necessary for proper positioning of pseudo-elements */
+        }
+
+    /* nav a.active {
+        background-color: #c3c2c2;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    } */
+
+    
+
+
+    /*控制按钮下方的bar*/
+    nav a::before {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        background-color: black;
+        transform: translateX(-50%) scaleX(0); /* 初始状态：中心压缩 */
+        width: 100%; /* 设置宽度为100%，但初始状态由于scaleX(0)不可见 */
+        height: 2.5px; /* 下划线的厚度 */
+        transition: transform 0.3s ease, background-color 0.3s ease; /* 动画效果应用于变换属性和背景颜色 */
+    }
+
+    nav a:hover::before, nav a.active::before {
+        transform: translateX(-50%) scaleX(1); /* 悬停或激活时展开 */
+        background-color: #c3c2c2; /* 悬停或激活时颜色变黑 */
+    }
+
+    nav a:hover, nav a.active {
+        text-decoration: none;  /* 也确保悬停或激活状态下没有下划线 */
+        /*background-color: #c3c2c2;  /* 可选：在悬停或激活时更改背景颜色 */
+    }
+
+    nav a.active {
+        background-color: transparent; /* Optional: remove the background color when active */
+    }
+
+    /* 设置一般的链接*/
+    a {
+            color: rgb(11, 11, 142); /* 设置链接颜色为蓝色 */
+        }   
+
+   
+
+    .content {
+        display: none; /* Initially hide all content */
+        width: 950px; /* 设置固定宽度 */
+    /*    max-width: 100%; /* 确保宽度不超过视口宽度 */
+        overflow: hidden; /* 隐藏超出部分 */
+        text-align: left; /* 文本左对齐 */
+        padding: 35px; /* 添加内边距 */
+        box-sizing: border-box; /* 包括内边距和边框在内的总宽度 */
+        margin: 0 auto; /* 上下边距为0，自动调整左右边距来居中 */
+        }
+
+        .content p {
+        font-size: 18px; /* 设置段落文本的字体大小 */
+        }
+
+        #home-content hr {
+        width: 587px; /* 设置横线的宽度为600px */
+        border: 0; /* 移除默认边框 */
+        height: 1.5px; /* 设置横线的高度 */
+        background-color: #ccc; /* 设置横线的颜色 */
+        margin: 20px auto; /* 上下边距为20px，水平居中 */
+        }
+
+        .secondary-hr {
+        width: 950px; /* 设置横线的宽度为600px */
+        border: 0; /* 移除默认边框 */
+        height: 1px; /* 设置横线的高度 */
+        background-color: #ccc; /* 设置横线的颜色 */
+        margin: 10px auto; /* 上下边距为20px，水平居中 */
+        }
+
+
+
+
+    .active-content {
+        display: block; /* Only show active content */
+    }
+    /* Media Query to handle resizing and wrapping */
+    @media (max-width: 700px) {
+        nav {
+            white-space: normal; /* Allow wrapping */
+        }
+        nav a {
+            display: inline-block; /* Ensures proper line breaks */
+            width: 35%; /* Adjust width to ensure two items per line */
+        }
+    }
+    .tooltip {
+        position: absolute;
+        background-color: black;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 6px;
+        display: none; /* Initially hide the tooltip */
+        z-index: 1000;
+        left: 150%; /* Adjust based on tooltip position */
+        top: -10px; /* Adjust based on tooltip position */
+    }
+
+    /* Paper的容器*/
+    .content-box {
+        width: 950px; /* 设置容器的宽度 */
+        margin: 0 auto; /* 居中显示 */
+        position: relative; /* 设置相对定位，便于内部元素定位 */
+        padding: 0px; /* 添加内边距 */
+        box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+        display: flex; /* 使用flex布局 */
+        align-items: flex-start; /* 子项沿交叉轴的起点对齐 */
+    }
+
+    .text-content {
+        max-width: 710px; /* 设置文本最大宽度 */
+    }
+
+    .right-aligned-image {
+        margin-left: auto; /* 设置左边距为自动，推动图片到右边 */
+        margin-right: 40px; /* 自动左边距推动到右边 */
+        width: 180px; /* 设置图片宽度，根据实际需要调整 */
+    }
+   
+
+    
+/* 分章节样式调整 */
+
+#home-content p {
+    line-height: 1.6; /* 通常的好的行间距从1.4到1.6不等 */
+}
+
+
+#publications-content h1 {
+    margin-bottom: 5px; /* 默认可能是20px或更多，根据需要调整 */
+    /* margin-top: auto  */
+
+}
+
+.publication-info {
+    font-size: 0.2em;
+    color: grey;
+    text-align: left;
+    margin-top: -20px; /* Adjust as needed to align properly */
+    margin-bottom: -10px; /* Space before the article starts */
+}
+
+.news-body .large-initial {
+    font-size: 2.5em; /* Adjust size as needed */
+    float: left;
+    line-height: 1.1;
+    margin-right: 7px; /* Space between the large initial and rest of the text */
+    color: black; /* Optional: change the color if needed */
+}
+
+.news-body {
+    line-height: 1.4;  /* This sets the line spacing. Adjust the value as needed. */
+}
+
+
+
+    
+</style>
+<script>
+
+window.onload = function() {
+    route();  // 初始化页面内容
+};
+
+window.onhashchange = function() {
+    route();  // 当URL哈希改变时，重新路由以更新内容
+};
+
+
+
+
+
+function route() {
+    var hash = window.location.hash.slice(1) || 'home'; // 从哈希中移除'#'并设置默认为'home'
+    hideAllContents();
+    showContent(hash);
+    updateActiveLink(hash);
+}
+
+function hideAllContents() {
+    document.querySelectorAll('.content').forEach(content => {
+        content.classList.remove('active-content');
+    });
+}
+
+function showContent(page) {
+    var contentId = page + '-content';
+    var content = document.getElementById(contentId);
+    if(content) {
+        content.classList.add('active-content');
+    }
+
+    // 控制背景图和标题显示
+    if (page === 'home') {
+        changeBackground('home/background_home.png');
+        document.querySelector('.hero p').style.display = 'block';
+        document.querySelector('.hero h1').style.display = 'block';
+    } else {
+        changeBackground(page + '/background_' + page + '.jpg');
+        document.querySelector('.hero p').style.display = 'none';
+        document.querySelector('.hero h1').style.display = 'none';
+    }
+}
+
+function updateActiveLink(page) {
+    var links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+        if (link.href.includes(page)) { // Check if the link href includes the page hash or identifier
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+
+function changeLanguage(language) {
+    alert('Language changed to ' + language);
+}
+
+
+function changeBackground(imageFile) {
+    document.querySelector('.hero').style.backgroundImage = "url('" + imageFile + "')";
+}
+
+
+function updateActiveLink(page) {
+    var links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+        if(link.id === page + '-link') {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+
+function checkNavWrap() {
+    var nav = document.querySelector('nav');
+    var profilePic = document.querySelector('.profile-pic');
+    if (nav.getBoundingClientRect().left < profilePic.getBoundingClientRect().right) {
+        nav.style.flexWrap = 'wrap'; // Apply wrap if overlapping
+    }
+}
+var hoverTimer; // Timer to check hover duration
+
+function showTooltip(event) {
+    hoverTimer = setTimeout(function() {
+        var tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = 'This photo was taken at Boeing Everett Factory, Everett, WA. The background is the vertical stabilizer of B747-8F airplane.';
+        document.body.appendChild(tooltip);
+        tooltip.style.display = 'block';
+        tooltip.style.left = event.clientX + 'px';
+        tooltip.style.top = (event.clientY - 40) + 'px'; // Position slightly above the cursor
+    }, 3000); // 3000 milliseconds equals 3 seconds
+}
+
+function hideTooltip() {
+    clearTimeout(hoverTimer); // Clear the timer when mouse moves away
+    var tooltips = document.querySelectorAll('.tooltip');
+    tooltips.forEach(function(tooltip) {
+        tooltip.remove(); // Remove the tooltip from DOM
+    });
+}
+</script>
+</head>
+<body>
+<div class="hero">
+    <img src="home/profilephoto.jpg" alt="Profile Photo" class="profile-pic" onmouseover="showTooltip(event)" onmouseout="hideTooltip()">
+    <p>Welcome to visit the homepage of</p>
+    <h1>XINCHANG ZHANG</h1>
+</div>
+
+
+<!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
+<!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
+<!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
+<!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
+<!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
+<!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
+
+
+         <!--增加新页面：参考这里的test格式，并修改对应所有的test字样-->
+<nav>
+    <a href="./index.html" id="home-link">Home</a>
+    <a href="#publications" id="publications-link">Publications</a>
+    <a href="#travels" id="travels-link">Travels</a>
+    <a href="#others" id="others-link">Others</a>
+    <a href="#news" id="news-link">News</a>
+
+    <!-- <a href="#test" id="test-link">Test</a> -->
+
+</nav>
+
+
+<!--Home Page Text   Home Page Text   Home Page Text   Home Page Text--> 
+<!--Home Page Text   Home Page Text   Home Page Text   Home Page Text--> 
+<!--Home Page Text   Home Page Text   Home Page Text   Home Page Text--> 
+
+<div id="home-content" class="content">
+    <p>I am currently a Ph.D. student at the <a href="https://www.bu.edu/eng/academics/departments-and-divisions/electrical-and-computer-engineering/" target="_blank">department of electrical and computer engineering</a>, <a href="https://www.bu.edu/" target="_blank">Boston University</a>, working with professor <a href="https://www.bu.edu/eng/profile/milos-popovic/" target="_blank">Miloš A. Popović</a>. My research focuses on the theory, design, and experimental demonstration of integrated electro-photonic systems for RF communications.</p>
+    <p>I proudly enjoy multiple personal hobbies, such as Marathon, the piano, <a href="https://en.wikipedia.org/wiki/Go_(game)" target="_blank">GO (or Paduk)</a>, hand writing, and pen collections. Besides these, I am an aviation enthusiast who learn story and history of cumercial airliners, airplanes, and aircrash investigations. Please refer to "Others" menu for details.</p>
+    <hr>
+    <h1>Educations</h1>
+    <p>2021-     <strong><a href="http://bu.edu/" target="_blank">Boston University</strong></a> | Ph.D. Candidate in Electrical Engineering</p>
+    <p>2017-2021 <strong><a href="http://en.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</strong></a> | B.S. in Physics</p>
+    <h1>Experience</h1>
+    <p>2024 May-Aug <strong><a href="https://ayarlabs.com/" target="_blank">Ayar Labs</strong></a> | Internship: Silicon photonics design</p>
+    <p>2021 Feb-Jun <strong><a href="https://vivolight.com/" target="_blank">vivoLight</strong></a>| Internship: Optical coherence tomography probe design</p>
+</div> 
+
+<!--Publication Page Text   Publication Page Text   Publication Page Text   Publication Page Text--> 
+<!--Publication Page Text   Publication Page Text   Publication Page Text   Publication Page Text--> 
+<!--Publication Page Text   Publication Page Text   Publication Page Text   Publication Page Text--> 
+
+<!-----------------Reasearch Articles--------------------> 
+<div id="publications-content" class="content">
+    <h1>Research Articles</h1>
+
+    <!--A new paper-->
+    <hr class="secondary-hr">
+    <div class="content-box">
+        <div class="text-content">
+            <p style="font-size: 20px; font-weight: bold;">Efficient wideband tunable RF-optical signal conversion via triply-resonant active-passive photonic molecules</p>
+            <p><a href="https://preprints.opticaopen.org/articles/preprint/Efficient_wideband_tunable_RF-optical_signal_conversion_via_triply-resonant_active-passive_photonic_molecules/25655976" target="_blank">Preprint <strong>XX</strong>(x) xxxx-xxxx, 2024</a></p>
+            <p>Manuj Singh, <strong>Xinchang Zhang</strong>, ..., Vladimir M. Stojanović, Miloš A. Popović</p>
+        </div>
+        <img src="publications/TripleCover.jpg" alt="描述性文本" class="right-aligned-image">
+    </div>
+    
+    <!--A new paper-->
+    <hr class="secondary-hr">
+    <div class="content-box">
+        <div class="text-content">
+            <p style="font-size: 20px; font-weight: bold;">Engineering the passband shape of coupled-cavity bandpass filters for low loss and/or narrow bandwidth</p>
+            <p><a href="https:/doi.org/10.1364/OL.525476" target="_blank">Optics Letters <strong>49</strong>(13) Early-Posting, 2024</a></p>
+            <p><strong>Xinchang Zhang</strong>, Manuj Singh, Dining Li, Miloš A. Popović</p>
+        </div>
+        <img src="publications/FilterCover.jpg" alt="描述性文本" class="right-aligned-image">
+    </div>
+
+
+<!-----------------Conference Presentations--------------------> 
+    <h1>Conference Presentations</h1>
+    
+    <!--A new conf-->
+    <hr class="secondary-hr">
+    <p>Hybrid integration of silicon slot photonics with ferroelectric nematic liquid crystal for poling-free Pockels-effect modulation <a href="https://www.cleoconference.org/home/schedule/?day=Wednesday#Wednesday" target="_blank">2024 Conference on Lasers and Electro-Optics , paper SW3R.1</a></p>
+    <p>D. Onural, I. Wang, LY Chiang, S. Raja, <strong>X. Zhang</strong>, M. Singh, D. Li, H. Dao, S. Pajk, C. Pecionvsky, M. Popović</p>
+
+    <!--A new conf-->
+    <hr class="secondary-hr">
+    <p>Passband shapes that minimize the insertion loss and bandwidth of coupled-resonator bandpass filters <a href="https://opg.optica.org/abstract.cfm?uri=LS-2023-JW4A.25" target="_blank">2023 Frontiers in Optics + Laser Science, paper JW4A.25</a></p>
+    <p><strong>X. Zhang</strong>, M. Popović</p>
+    <!-- Additional sections and titles can be added here -->
+</div>
+
+
+
+
+<!--Travel Page Text   Travel Page Text   Travel Page Text   Travel Page Text--> 
+<!--Travel Page Text   Travel Page Text   Travel Page Text   Travel Page Text--> 
+<!--Travel Page Text   Travel Page Text   Travel Page Text   Travel Page Text--> 
+
+<div id="travels-content" class="content">
+    <h1>My Travel Adventures</h1>
+    <p>Read about my travels around the world.</p>
+    <!-- Additional sections and titles can be added here -->
+</div>
+
+<!--Other Page Text   Other Page Text   Other Page Text   Other Page Text-->
+<!--Other Page Text   Other Page Text   Other Page Text   Other Page Text--> 
+<!--Other Page Text   Other Page Text   Other Page Text   Other Page Text--> 
+
+<div id="others-content" class="content">
+    <h1>Other Activities</h1>
+    <p>Learn more about my other hobbies and interests.</p>
+    <!-- Additional sections and titles can be added here -->
+</div>
+
+
+<!--Test Page Text   Test Page Text   Test Page Text   Test Page Text-->
+<!--Test Page Text   Test Page Text   Test Page Text   Test Page Text--> 
+<!--Test Page Text   Test Page Text   Test Page Text   Test Page Text--> 
+
+<div id="news-content" class="content">
+    <h1>No News from Silicon Photonics Lab.</h1>
+    <p>I mean seriously no news.</p>
+
+    <hr class="secondary-hr">
+
+    <h1>One negligible impact to mankind, one giant leap for me.</h1>
+    <p class="publication-info">Released on 28 May 2024, in San Jose, California, USA.</p>
+    <p class="news-body"><span class="large-initial">T</span>he first journal manuscript of mine has been accepted by Optics Letters on 28 May, 2024. This is a training work in my Ph.D. and its acceptance represents my acquisition of the ability to conduct a closed-story research and manage scientific communications via peer review correspondence and publications. </p>
+
+    <hr class="secondary-hr">
+
+    <h1>Embarking on a new journey: my first job at Ayar Labs marks a promising alliance.</h1>
+    <p class="publication-info">Released on 21 May 2024, in San Jose, California, USA.</p>
+    <p class="news-body"><span class="large-initial">I</span> have commenced my first full-time role as an intern at Ayar Labs, under the guidance of Dr. John Fini. In this role, I am part of the Optical Design Team, where we are focusing on advancing system-level electro-photonic chips for DWDM transceiver systems. This position leverages and expands upon my previous research into practical, advanced industry applications of optical interconnect technologies.</p>
+
+
+</div>
+
+
+
+
+<!-- <div id="test-content" class="content">
+    <h1>Test Page</h1>
+    <p>This is a page for test.</p>
+</div> -->
+
+
+</body>
+</html>
