@@ -232,6 +232,25 @@
 
 }
 
+.publication-info {
+    font-size: 0.2em;
+    color: grey;
+    text-align: left;
+    margin-top: -20px; /* Adjust as needed to align properly */
+    margin-bottom: -10px; /* Space before the article starts */
+}
+
+.news-body .large-initial {
+    font-size: 2.5em; /* Adjust size as needed */
+    float: left;
+    line-height: 1.1;
+    margin-right: 7px; /* Space between the large initial and rest of the text */
+    color: black; /* Optional: change the color if needed */
+}
+
+.news-body {
+    line-height: 1.4;  /* This sets the line spacing. Adjust the value as needed. */
+}
 
 
 
@@ -400,24 +419,13 @@ function hideTooltip() {
 <div id="publications-content" class="content">
     <h1>Research Articles</h1>
 
-    <!-- A new paper
-    <hr class="secondary-hr">
-    <div class="content-box">
-        <div class="text-content">
-            <p style="font-size: 20px; font-weight: bold;">Widely tuable mm-wave sensing unit in a monolithic integrated 45nm CMOS electro-photonic platform</p>
-            <p><a href="https://preprints.opticaopen.org/articles/preprint/Efficient_wideband_tunable_RF-optical_signal_conversion_via_triply-resonant_active-passive_photonic_molecules/25655976" target="_blank">nature communications <strong>under review</strong>, 2024</a></p>
-            <p>Manuj Singh <sup>&dagger;</sup>, <strong>Xinchang Zhang <sup>&dagger;</sup></strong>, Ruocheng Wang  <sup>&dagger;</sup>, Deniz Onural <sup>&dagger;</sup>, ..., Vladimir M. Stojanović, Miloš A. Popović (&dagger;: these authours contributed to this work equally)</p>
-        </div>
-        <img src="publications/nc_paper.jpg" alt="描述性文本" class="right-aligned-image">
-    </div> -->
-
     <!--A new paper-->
     <hr class="secondary-hr">
     <div class="content-box">
         <div class="text-content">
             <p style="font-size: 20px; font-weight: bold;">Efficient wideband tunable RF-optical signal conversion via triply-resonant active-passive photonic molecules</p>
             <p><a href="https://preprints.opticaopen.org/articles/preprint/Efficient_wideband_tunable_RF-optical_signal_conversion_via_triply-resonant_active-passive_photonic_molecules/25655976" target="_blank">Preprint <strong>XX</strong>(x) xxxx-xxxx, 2024</a></p>
-            <p>Manuj Singh<sup>*</sup>, <strong>Xinchang Zhang<sup>*</sup></strong>, ..., Vladimir M. Stojanović, Miloš A. Popović</p>
+            <p>Manuj Singh, <strong>Xinchang Zhang</strong>, ..., Vladimir M. Stojanović, Miloš A. Popović</p>
         </div>
         <img src="publications/TripleCover.jpg" alt="描述性文本" class="right-aligned-image">
     </div>
@@ -483,9 +491,21 @@ function hideTooltip() {
 
     <hr class="secondary-hr">
 
-    <h1>One negligible impact to mainkind, one giant leap for me.</h1>
-    <p>San Jose: The first journal manuscript of mine has been accepted by Optics Letters on 28 May, 2024.</p>
+    <h1>One negligible impact to mankind, one giant leap for me.</h1>
+    <p class="publication-info">Released on 28 May 2024, in San Jose, California, USA.</p>
+    <p class="news-body"><span class="large-initial">T</span>he first journal manuscript of mine has been accepted by Optics Letters on 28 May, 2024. This is a training work in my Ph.D. and its acceptance represents my acquisition of the ability to conduct a closed-story research and manage scientific communications via peer review correspondence and publications. </p>
+
+    <hr class="secondary-hr">
+
+    <h1>Embarking on a new journey: my first job at Ayar Labs marks a promising alliance.</h1>
+    <p class="publication-info">Released on 21 May 2024, in San Jose, California, USA.</p>
+    <p class="news-body"><span class="large-initial">I</span> have commenced my first full-time role as an intern at Ayar Labs, under the guidance of Dr. John Fini. In this role, I am part of the Optical Design Team, where we are focusing on advancing system-level electro-photonic chips for DWDM transceiver systems. This position leverages and expands upon my previous research into practical, advanced industry applications of optical interconnect technologies.</p>
+
+
 </div>
+
+
+
 
 <!-- <div id="test-content" class="content">
     <h1>Test Page</h1>
