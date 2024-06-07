@@ -252,7 +252,21 @@
     line-height: 1.4;  /* This sets the line spacing. Adjust the value as needed. */
 }
 
+.nav-logos {
+    position: fixed; /* 固定定位，使logos总是可见 */
+    right: 50px;     /* 距离屏幕右侧10px */
+    top: 37.5%;        /* 距离屏幕顶部20%的位置开始 */
+    display: flex;
+    flex-direction: column; /* 让logo竖直排列 */
+    align-items: center;    /* 中心对齐logo */
+    z-index: 1000;          /* 确保logo在最前面 */
+}
 
+.nav-logos img {
+    margin-bottom: 15px; /* logo之间的垂直间距 */
+    width: auto;         /* 设定logo的宽度 */
+    height: 25px;        /* 自动调整高度以保持比例 */
+}
 
     
 </style>
@@ -373,7 +387,11 @@ function hideTooltip() {
     <h1>XINCHANG ZHANG</h1>
 </div>
 
-
+<div class="nav-logos" style=" flex-direction: column;">
+    <a href="mailto: xinchangece@gmail.com" target="_blank"><img src="../general_elements/email.png" alt="Email Logo"></a>
+    <a href="https://scholar.google.com/citations?user=9fIvuNIAAAAJ&hl=en" target="_blank"><img src="../general_elements/gs.png" alt="GS Logo"></a>
+    <a href="https://www.linkedin.com/in/xinchang-zhang-82a285232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><img src="../general_elements/in.png" alt="LinkedIn Logo"></a>
+</div>
 <!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
 <!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
 <!--格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束  格式声明内容结束-->
