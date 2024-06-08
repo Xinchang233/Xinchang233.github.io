@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 72 72">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-5, .cls-6 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #ef8012;
+      }
+
+      .cls-7 {
+        fill: #fff;
+        font-family: HardingTextWeb-Regular, 'Harding Text Web';
+        font-size: 65px;
+      }
+
+      .cls-4 {
+        fill: #000;
+      }
+
+      .cls-5 {
+        stroke: #fff;
+        stroke-width: 6px;
+      }
+
+      .cls-5, .cls-6 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-6 {
+        stroke: #000;
+        stroke-width: 7px;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="359.7" y="61.12" width="46.19" height="65.76"/>
+    </clipPath>
+  </defs>
+  <g>
+    <circle class="cls-4" cx="36" cy="36" r="34.55"/>
+    <text class="cls-7" transform="translate(16.33 52.8)"><tspan x="0" y="0">n</tspan></text>
+  </g>
+  <g>
+    <path class="cls-3" d="M362.89,78.71v2.4h7.05v-2.4c0-5.82,4.73-10.55,10.55-10.55s10.55,4.73,10.55,10.55v17.38h7.05v-17.38c0-9.7-7.89-17.59-17.59-17.59s-17.59,7.89-17.59,17.59M386.32,106.23c0,3.21-2.6,5.81-5.81,5.81s-5.81-2.6-5.81-5.81,2.6-5.81,5.81-5.81,5.81,2.6,5.81,5.81"/>
+    <g class="cls-1">
+      <path class="cls-3" d="M366.74,106.17c0-7.55,6.15-13.7,13.7-13.7s13.7,6.15,13.7,13.7-6.15,13.7-13.7,13.7-13.7-6.15-13.7-13.7M359.7,106.17c0,11.44,9.31,20.75,20.75,20.75s20.75-9.31,20.75-20.75-9.31-20.75-20.75-20.75-20.75,9.31-20.75,20.75"/>
+    </g>
+  </g>
+  <text class="cls-7" transform="translate(16.33 52.8)"><tspan x="0" y="0">n</tspan></text>
+  <g>
+    <circle class="cls-4" cx="-94.25" cy="-18.27" r="34.55"/>
+    <circle class="cls-5" cx="-94.15" cy="-18.27" r="16.39"/>
+    <line class="cls-6" x1="-94.15" y1="-18.27" x2="-122.07" y2="-18.27"/>
+  </g>
+</svg>
