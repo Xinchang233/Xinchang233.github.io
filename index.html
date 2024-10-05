@@ -308,9 +308,15 @@ function showContent(page) {
         document.querySelector('.hero p').style.display = 'block';
         document.querySelector('.hero h1').style.display = 'block';
     } else {
+        if (page == 'publications'){
+            changeBackground(page + '/background_' + page + '.jpg');
+            document.querySelector('.hero p').style.display = 'none';
+            document.querySelector('.hero h1').style.display = 'none';
+        } else {
         changeBackground(page + '/background_' + page + '.jpg');
         document.querySelector('.hero p').style.display = 'none';
         document.querySelector('.hero h1').style.display = 'none';
+        }
     }
 }
 
