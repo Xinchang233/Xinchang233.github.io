@@ -54,6 +54,19 @@
         margin: 0;
         padding: 0;
     }
+
+    .three-column {
+    column-count: 3;
+    column-gap: 36px;
+    text-align: left;
+    }
+
+    .two-column {
+    column-count: 2;
+    column-gap: 36px;
+    text-align: left;
+    }
+
    
     .profile-pic {
         position: absolute;
@@ -131,7 +144,7 @@
 
     .content {
         display: none; /* Initially hide all content */
-        width: 950px; /* 设置固定宽度 */
+        width: 1100px; /* 设置固定宽度 */
     /*    max-width: 100%; /* 确保宽度不超过视口宽度 */
         overflow: hidden; /* 隐藏超出部分 */
         text-align: left; /* 文本左对齐 */
@@ -153,12 +166,21 @@
         }
 
         .secondary-hr {
-        width: 950px; /* 设置横线的宽度为600px */
+        width: 1100px; /* 设置横线的宽度为600px */
+        border: 0; /* 移除默认边框 */
+        height: 1.6px; /* 设置横线的高度 */
+        background-color: #ccc; /* 设置横线的颜色 */
+        margin: 10px auto; /* 上下边距为20px，水平居中 */
+        }
+
+        .third-hr {
+        width: 250px; /* 设置横线的宽度为600px */
         border: 0; /* 移除默认边框 */
         height: 1px; /* 设置横线的高度 */
         background-color: #ccc; /* 设置横线的颜色 */
         margin: 10px auto; /* 上下边距为20px，水平居中 */
         }
+
 
 
 
@@ -413,9 +435,47 @@ function hideTooltip() {
 <!--News Page Text   News Page Text   News Page Text   News Page Text--> 
 
 <div id="news-content" class="content">
-    <h1>No News from Silicon Photonics Lab.</h1>
-    <p>I mean seriously no news.</p>
+    <h1 style="text-align: center; font-size: 40px;">No News from Silicon Photonics Lab.</h1>
+    <p style="text-align: center; color:gray">I mean seriously no news.</p>
+    <!-- <div class="two-column">
+        <p class="news-body">"Prospectus" defence - or the midterm defence of my Ph.D. program was successfully completed on Friday, November 8, 2024 at Boston University. Reaching this milestone I have been granted a Master of Science degree.</p>        
+    </div> -->
 
+    
+    <hr class="secondary-hr">
+    <div class="three-column">
+        <h1>Halfway There: In the Name of Master of Science.</h1>
+        <p class="publication-info">November 9, 2024.<br>Toronto, Ontario, Canada.</p>
+        <p class="news-body"><span class="large-initial">"P</span>rospectus" defence - or the midterm defence of my Ph.D. program was successfully completed on Friday, November 8, 2024 at Boston University. Reaching this milestone I have been granted a Master of Science degree.</p>        
+        
+        <hr class="third-hr">
+        <h1>Halfway There: Cambridge Half Marathon Complete.</h1>
+        <p class="publication-info">November 3, 2024.<br>Cambridge, Massachusetts, USA.</p>
+        <p class="news-body"><span class="large-initial">W</span>hen Cambridge lay quiet and still, and its gentle beauty wrapped in the first chill of early winter, I took to the course of the Cambridge Half Marathon, each step a reminder of resilience and rhythm. Crossing that halfway mark felt like a moment of accomplishment, a milestone on a journey with some more steps yet to come.</p>
+        <p class="news-body">Here's to the miles ahead — on the road and beyond.</p>
+        
+        <!-- <hr class="third-hr"> -->
+        <h1>Being in the Spotlight.</h1>
+        <p class="publication-info">October 11, 2024.<br>Boston, Massachusetts, USA.</p>
+        <p class="news-body"><span class="large-initial">A</span> recent paper I co-authored with Dr. Manuj K. Singh, Professor Vladimir M.Stojanović and Professor Miloš A. Popović, was annouenced by Optica Publishing Group to be selected as <i>Spotlight on Optics</i> on 11th October, 2024. </p>
+        <p class="news-body">This work is initially published in <i>Optics Letters</i>. It is now open access available because of this recognisaiton. The links to the publicaiton and a breif summary in plain text from Optica Publishing Group are attached. </p>
+        <p><a href="https://doi.org/10.1364/OL.528080" target="_blank" style="text-decoration: none;">Optics Letters <strong>49</strong>(14) 3930-3933, 2024</a></p>
+        <p><a href="https://opg.optica.org/spotlight/summary.cfm?id=553189" target="_blank" style="text-decoration: none;"> Spotlight on Optics summary</a></p>
+        
+        <hr class="third-hr">
+        <h1>One negligible impact to mankind, one giant leap for me.</h1>
+        <p class="publication-info">Released on May 28, 2024. Updated on June 13, 2024. In San Jose, California, USA.</p>
+        <p class="news-body"><span class="large-initial">T</span>he first journal manuscript of mine has been posted in <i>Optics Letters</i> on 28th May, 2024. This is a training work in my Ph.D. and its acceptance represents my acquisition of the basic ability to conduct a closed-story research and manage scientific communications via peer review correspondence and publications. </p>
+        <p class="news-body">Another manuscript which I contributed as one of the major authors was accepted by the same journal on 13th June, 2024. The leading and the other major contributing author is Dr. Manuj K. Singh.</p>
+        
+        <hr class="third-hr">
+        <h1>Embarking on a new journey: my first job at Ayar Labs marks a promising alliance.</h1>
+        <p class="publication-info">May 21, 2024.<br>San Jose, California, USA.</p>
+        <p class="news-body"><span class="large-initial">I</span> have commenced my first full-time role as an intern at Ayar Labs, under the guidance of Dr. John Fini. In this role, I am part of the Optical Design Team, where we are focusing on advancing system-level electro-photonic chips for DWDM transceiver systems. This position leverages and expands upon my previous research into practical, advanced industry applications of optical interconnect technologies.</p>
+    </div>
+    <hr class="secondary-hr">
+    
+<!-- 
     <hr class="secondary-hr">
 
     <h1>Halfway There: In the Name of Master of Science.</h1>
@@ -452,7 +512,7 @@ function hideTooltip() {
 
     <h1>Embarking on a new journey: my first job at Ayar Labs marks a promising alliance.</h1>
     <p class="publication-info">Released on 21 May 2024, in San Jose, California, USA.</p>
-    <p class="news-body"><span class="large-initial">I</span> have commenced my first full-time role as an intern at Ayar Labs, under the guidance of Dr. John Fini. In this role, I am part of the Optical Design Team, where we are focusing on advancing system-level electro-photonic chips for DWDM transceiver systems. This position leverages and expands upon my previous research into practical, advanced industry applications of optical interconnect technologies.</p>
+    <p class="news-body"><span class="large-initial">I</span> have commenced my first full-time role as an intern at Ayar Labs, under the guidance of Dr. John Fini. In this role, I am part of the Optical Design Team, where we are focusing on advancing system-level electro-photonic chips for DWDM transceiver systems. This position leverages and expands upon my previous research into practical, advanced industry applications of optical interconnect technologies.</p> -->
 </div>
 
 </body>
